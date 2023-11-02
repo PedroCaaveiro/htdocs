@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tema 3 Ejercicio 2</title>
+
+    <!----------estilos -->
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        background-color: black;
+      }
+      /* Estilo Contenedor*/
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+
+        width: 500px;
+        height: 500px;
+        background-color: rgb(207, 35, 12);
+      }
+      /*  Estilos button*/
+      #cerrar {
+        height: 50px;
+        width: 150px;
+        margin-top: 1.25rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+        <!-----------boton con onclick -->
+      <button onclick="cerrarVentana()" id="cerrar">Cerrar la ventana</button>
+    </div>
+
+    <script>
+// PROCEDIMIENTO 
+function cerrarVentana(){
+// funcion cerrar ventana
+window.close();
+
+}
+
+
+
+    </script>
+  </body>
+</html>

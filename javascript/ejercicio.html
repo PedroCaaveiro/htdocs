@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+var operando_1;
+var operando_2;
+// hago un do while para asegurarme que solo se puede poner true o false
+do {
+operando_1 = prompt("Introduce el primer valor lógico (true o false): ");
+} while (operando_1 !== "true" && operando_1 !== "false");
+
+do {
+operando_2 = prompt("Introduce el segundo valor lógico (true o false): ");
+} while (operando_2 !== "true" && operando_2 !== "false");
+
+// convierte en booleando
+operando_1 = operando_1==='true';
+operando_2 = operando_2==="true";
+
+// hago un condicional para comprobar las variables si son dos true es verdadero, true&& false es false false&& true es false y false&& false es false 
+
+if ( operando_1 && operando_2) {
+alert("El resultado de valor 1 && valor 2 es true");
+} else {
+alert("El resultado de valor 1 && valor es false");
+}
+
+
+</script>
+</body>
+</html>

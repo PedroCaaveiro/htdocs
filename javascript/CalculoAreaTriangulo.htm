@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tema 3 ejercicio 1</title>
+  </head>
+  <body>
+    <p>Introduce la Base</p>
+    <input type="number" id="numero1" /><br />
+    <p>Introduce la Altura</p>
+    <input type="number" id="numero2" />
+    <button onclick="calculo()">click</button>
+
+    <h3 id="resultado"></h3>
+<!---------- FUNCION PARA CALCULAR EL AREA -->
+    <script>
+      function calculo() {
+        // VARIABLES DONDE SE PIDE LOS VALORES AL USUARIO MEDIANTE SU ID 
+        let numero1 = document.getElementById("numero1").value;
+        let numero2 = document.getElementById("numero2").value;
+        // CALCULO DEL AREA DEL TRIANGULO 
+        let resultado = document.getElementById("resultado");
+        let area = (numero1 * numero2) / 2;
+        // INTRODUZCO EL RESULTADO EN LA VARIABLE CON EL ID DE SALIDA HACIA EL H3
+        resultado.textContent = "El area de un triangulo es:" + area;
+      }
+    </script>
+  </body>
+</html>
