@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    <form action="ejempplo1.html" method="get">
+        introduza su nombre:<input type="text" name="nombre"><br>
+        introduza su apellido:<input type="text" name="apellido"><br>
+        introduza su edad <input type="number" name="edad"><br>
+        <input type="submit" value="enviar">
+
+
+
+    </form>
+-->
+<form action="ejemplo2.html" method="post">
+introduza su nombre: <input type="text" name="nombre"><br>
+introduza su apellido <input type="text" name="apellido"><br>
+introduza su edad <input type="number" name="edad">
+
+<input type="submit" value="enviar">
+</form>
+</body>
+</html>

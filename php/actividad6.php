@@ -13,17 +13,17 @@ $mensaje="Hola mundo";
 // 1 muestre por pantalla el mensaje "hola mundo
 echo("$mensaje <br><br>");
 // 2 convierta este mensaje en un array
-$mensaje_Array=str_split($mensaje);
+$mensaje_Array=explode(" ",$mensaje);
 
-foreach ($mensaje_Array as $key => $value) {
-    echo("  El indice  $key=  $value <br>");
- 
 
- }
 
  // muestre el valor del indice  de ese array 
 
- echo ("<br> el indice 0 es: $mensaje_Array[0]");
+echo $mensaje_Array[0];
+// convertimos en string
+
+$frase=implode($mensaje_Array);
+echo $frase;
 
  
 ?>
