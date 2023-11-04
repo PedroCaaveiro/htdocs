@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 cambiar color de fondo</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        document.write("<form name=\"cambiarcolor\">");
+         document.write("<b>Selecciona un color para el fondo de página:</b><br>");
+         document.write("<select name=\"color\">");
+            document.write("<option value=\"red\">Rojo</option>");
+            document.write("<option value=\"blue\">Azul</option>");
+            document.write("<option value=\"yellow\">Amarillo</option>");
+            document.write("<option value=\"green\">Verde</option>");
+            document.write("<option value=\"#DAFF33\">LIma</option>");
+            document.write("<option value=\"#v414AB5\">Turquesa oscuro</option>");
+            document.write("<option value=\"#D342BB\">Magenta</option>");
+            document.write("<option value=\"#716599\">Gris</option>");
+            document.write("<option value=\"#70D295\">verde Claro</option>");
+
+            document.write("</select>");
+                document.write("<input type=\"button\"value=\"Modifica el color\" onclick=\"document.bgColor=document.cambiarcolor.color.value\">");
+                document.write("</form>");
+
+
+
+    </script>
+</body>
+</html>
