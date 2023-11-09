@@ -1,0 +1,74 @@
+body{
+background-color: rgb(233, 240, 240);
+display: flex;
+justify-content: center;
+
+}
+.contenedor{
+
+width:800px;
+height: 700px;
+background-color: rgb(138, 43, 223);
+padding-top: 40px;;
+border-radius: 25%;
+box-shadow: 10px 10px 10px rgba(15, 14, 14, 0.966); 
+
+
+}
+  h1{
+ position: relative;
+ margin-top: 40px;
+text-align: center;
+color: white;
+
+
+}
+p{
+    
+font-size: 20px;
+margin-top: 10px;
+padding-top: 10px;
+color: white;
+margin-left: 8px;
+line-height: 3;
+
+}
+.contenedor .imagen{
+position:relative;
+float: right;
+margin-top: -360px;
+margin-right: 100px;
+width: 330px;
+height: 330px;
+background-image: url(imagen.png);
+background-size: cover;
+
+}
+
+.elementos-flex {
+    display: flex;
+    justify-content: center; 
+}
+  .regresar {
+    position: relative;
+    width: 130px;
+    height: 50px;
+    background-color: rgb(65, 64, 66);
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    line-height: 50px; 
+    margin-top: 50px;
+    margin-right: 20px; 
+  }
+
+ .boton input{
+    width: 100px;
+    height: 100px;
+   
+   
+
+
+  }

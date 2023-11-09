@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="contenido">
+
+    <!------------FORMULARIO METODO POST-->
+    <form action="procesa.php" method="POST" novalidate><!--pongo no validate para poder comprobar las validaciones en php -->
+<!---------------H1--------->
+        <h1>REGISTRO DE USUARIOS</h1>
+<!---------------- INPUTS PARA INTRODUCIR  LOS DATOS -->
+        <p>Introduzca su nombre</p>
+        <input type="text" name="nombre" placeholder="Nombre">
+        <p> Introduzca su apellido</p>
+        <input type="text" name="apellido"  placeholder="Apellido">
+        <p>Introduzca su fecha de nacimiento</p>
+        <input type="date" name="fecha">
+        <p>Introduzca su correo electronico</p>
+        <input type="mail" name="email" placeholder="@">
+        <p>Introduzca su nombre de usuario</p>
+        <input type="text" name="usuario"  placeholder="Usuario">
+        <p>Introduzca su contraseña</p>
+        <input type="password" name="contrasenya"  placeholder="Contraseña">
+        <p>Confirmar contraseña</p>
+        <input type="password" name="confirmar_contrasenya" placeholder="Confirmar Contraseña"><br>
+        <p><input type="checkbox" name="terminos" >Aceptar terminos y condiciones</p>
+        <!------------- BOTON ENVIO -->
+        <button type="submit" value="enviar ">ENVIAR</button>
+
+
+    </form>
+</div>
+</body>
+
+</html>

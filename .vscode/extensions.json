@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "ritwickdey.liveserver",
+        "ms-vscode.js-debug-nightly",
+        "figma.figma-vscode-extension",
+        "dbaeumer.vscode-eslint",
+        "formulahendry.code-runner",
+        "formulahendry.auto-close-tag",
+        "cipchk.cssrem",
+        "esbenp.prettier-vscode",
+        "xdebug.php-debug",
+        "tyriar.lorem-ipsum",
+        "zobo.php-intellisense"
+    ]
+}

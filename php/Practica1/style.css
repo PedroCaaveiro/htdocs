@@ -1,0 +1,55 @@
+.contenido {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(77, 13, 136);
+}
+
+.contenido form {
+    background-color: rgb(72, 165, 165);
+    padding: 20px;
+    max-width: 600px;
+    margin-top: 100px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(247, 245, 245, 0.966); 
+}
+.contenido h1{
+    color: white;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background-color: rgb(141, 135, 135);
+}
+input::placeholder {
+    color: rgb(226, 221, 221); 
+    font-style: italic; 
+}
+form input[type='date']{
+
+color: white;
+
+}
+
+
+ form button {
+    background-color: rgb(141, 135, 135);
+    border: none;
+    cursor: pointer;
+    border: 1px solid black;
+    color: white;
+}
+
+form p{
+    color: rgb(255, 244, 244);
+}
+
+
+/******* procesa.php*/
+
+
+
+
