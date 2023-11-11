@@ -26,7 +26,7 @@
     }
 
     // OCULTAR LA CONTRASEÑA
-    function ocultaContrasenya($contrasenya)
+    function ocultarPassword($contrasenya)
     {
         $longitud = strlen($contrasenya);
         $contrasenyaOculta = str_repeat('*', $longitud);
@@ -41,29 +41,41 @@
 
     <?php
 
-    // VARIABLES DONDE EL METODO POST GUARDA LOS DATOS DEL FORMULARIO
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $fecha = $_POST['fecha'];
-    $email = $_POST['email'];
-    $usuario = $_POST['usuario'];
-    // USUARIO CAPTURADO CON EL METODO STRTLOWER PARA QUE SALGA EN MINUSCULAS https://www.php.net/manual/es/function.strtolower.php
-    $usuario = strtolower($usuario);
-    // SE ELIMINA LOS ESPACIOS EN BLANCO AL PRINCIPIO Y AL FINAL https://www.php.net/manual/es/function.trim.php
-    $usuario = trim($usuario);
-    $contrasenya = $_POST['contrasenya'];
-    $confirmarContrasenya = $_POST['confirmar_contrasenya'];
-    // TERMINOS ACEPTADOS  https://www.php.net/manual/es/function.isset
-    $terminos = isset($_POST['terminos']);
+/* VARIABLES DONDE EL METODO POST GUARDA LOS DATOS DEL FORMULARIO TAMBIEN
+    LE FACILITO LA FUNCION HTMLENTITIES Y STRIP_TAGS
+    PARA EVITAR INYECCIONES DECODIGO:  https://www.php.net/manual/es/function.htmlentities.php;
+    https://www.php.net/manual/es/function.strip-tags.php  */
 
+$nombre = htmlentities(strip_tags($_POST['nombre']));
+$apellido = htmlentities(strip_tags($_POST['apellido']));
+$fecha = htmlentities(strip_tags($_POST['fecha']));
+$email = htmlentities(strip_tags($_POST['email']));
+$usuario = strip_tags($_POST['usuario']);
+// USUARIO CAPTURADO CON EL METODO STRTLOWER PARA QUE SALGA EN MINUSCULAS https://www.php.net/manual/es/function.strtolower.php
+$usuario = strtolower($usuario);
+// SE ELIMINAN LOS ESPACIOS EN BLANCO AL PRINCIPIO Y AL FINAL https://www.php.net/manual/es/function.trim.php
+$usuario = trim($usuario);
+$contrasenya = htmlentities(strip_tags($_POST['contrasenya']));
+$confirmarContrasenya = htmlentities(strip_tags($_POST['confirmar_contrasenya']));
 
-    // VALIDAR LOS TERMINOS 
-    if ($terminos) {
+// TERMINOS ACEPTADOS https://www.php.net/manual/es/function.isset
+$terminos = isset($_POST['terminos']);
 
-    } else {
-        header("Location: error.php?cod_error=100");
+ // VALIDAR EL NOMBRE CON EMPTY SI ESTA VACIO ERROR
+if (empty($nombre)) {
+    header("Location: error.php?cod_error=600");
+    exit();
+}
+
+    // VALIDAR EL APELLIDO CON EMPTY SI ESTA VACIO ERROR
+
+    if(empty($apellido)){
+        header("Location: error.php?cod_error=700");
         exit();
     }
+
+    
+
 
     // VALIDAR LA FECHA CON LA FUNCION VALIDARFECHA
     if (validarfecha($fecha) == true) {
@@ -72,6 +84,23 @@
         header("Location: error.php?cod_error=200");
         exit();
     }
+    // VALIDAR EL CORREO ELECTRONICO  https://www.php.net/manual/es/filter.examples.validation.php
+    
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+    } else {
+        header("Location:error.php?cod_error=400");
+        exit();
+    }
+
+    // VALIDAR EL USUARIO CON EMPTY SI ESTA VACIO ERROR
+
+    if (empty($usuario)) {
+        header("location: error.php?cod_error=800");
+        exit();
+    }
+        
+
 
     // VALIDAR CONTRASEÑA Y CONFIRMACION
     
@@ -88,32 +117,24 @@
 
     } else {
         header("Location: error.php?cod_error=500");
-    }
-//  VALIDAR EL NOMBRE DE 
-if (!empty($nombre)) {
-    header("Location: error.php?cod_error=700");
-}
-//VALIDAR USUARIO
-if (!empty($usuario)) {
-    header("Location: error.php?cod_error=800");
-}
-// VALIDAR EL APELLIDO
-
-if (!empty($apellido)) {
-    header("Location: error.php?cod_error=600");
-} 
-
-
-    // VALIDAR EL CORREO ELECTRONICO  https://www.php.net/manual/es/filter.examples.validation.php
-    
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-
-    } else {
-        header("Location:error.php?cod_error=400");
         exit();
     }
+
+
+// VALIDAR LOS TERMINOS 
+if ($terminos) {
+
+} else {
+    header("Location: error.php?cod_error=100");
+    exit();
+}
+
+ // OCULTAR LA CONTRASEÑA CON LA FUNCION OCULTAR
+$oculta = ocultarPassword($contrasenya);
+
     ?>
 
+<!--------CREO UNAS CLASES PARA DARLE FORMA AL FORMULARIO DE SALIDA ------------->
     <div class="contenedor">
 
 
@@ -121,8 +142,7 @@ if (!empty($apellido)) {
 
 
         <?php
-        // OCULTAR LA CONTRASEÑA CON LA FUNCION 
-        $oculta = ocultaContrasenya($contrasenya);
+    
 
         // SI LOS DATOS HAN SIDO VALIDADOS CORRECTAMENTE
         echo ("<p><br>Nombre:$nombre.<br>Apellido: $apellido.<br>Fecha de nacimiento: $fecha.<br>Email: $email.<br>Usuario: $usuario<br>Contraseña:$oculta</p>");

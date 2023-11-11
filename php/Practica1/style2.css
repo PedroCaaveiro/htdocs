@@ -11,13 +11,13 @@ height: 700px;
 background-color: rgb(138, 43, 223);
 padding-top: 40px;;
 border-radius: 25%;
-box-shadow: 10px 10px 10px rgba(15, 14, 14, 0.966); 
+box-shadow: 5px 5px 5px rgba(15, 14, 14, 0.966); 
 
 
 }
   h1{
- position: relative;
- margin-top: 40px;
+position: relative;
+margin-top: 40px;
 text-align: center;
 color: white;
 
@@ -64,11 +64,11 @@ background-size: cover;
     margin-right: 20px; 
   }
 
- .boton input{
+.boton input{
     width: 100px;
     height: 100px;
-   
-   
+
+
 
 
   }

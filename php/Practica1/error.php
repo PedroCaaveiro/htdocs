@@ -32,17 +32,16 @@
         case '500':
             $imagen = '500.png';
             break;
-            case '600':
-                $imagen = '600.png';
-                break;
-                case '700':
-                    $imagen = '700.png';
-                    break;
-                    case '800':
-                        $imagen = '800.png';
-                        break;
-
-        default:
+        case '800':
+            $imagen = '800.png';
+            break;
+        case '600':
+            $imagen = '600.png';
+            break;
+        case '700':
+            $imagen='700.png';
+            break;
+            default:
 
             break;
     }
