@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tema 4 ejercicio 5</title>
+    <script type="text/javascript">
+        function coche (marca_in, modelo_in, anyo_in){
+            this.marca = marca_in;
+            this.modelo = modelo_in;
+            this.anyo = anyo_in;
+        }
+    </script>  
+</head>
+<body>
+    <script type="text/javascript">
+
+  
+    var coches = new Array(4);
+    coches[0] = new coche("Ferrari", "Scaglietti", "2010");
+    coches[1] = new coche("BMW", "Z4", "2010");
+    coches[2] = new coche("Seat", "Toledo", "1999");
+    coches[3] = new coche("Fiat", "500", "1995");
+
+    document.write("<table border='1'>");
+    document.write("<tr><th>Marca</th><th>Modelo</th><th>Año de fabricación</th></tr>");
+
+
+    for (i = 0; i < coches.length; i++) {
+        document.write("<tr>");
+        document.write("<td>" + coches[i].marca + "</td>");
+        document.write("<td>" + coches[i].modelo + "</td>");
+        document.write("<td>" + coches[i].anyo + "</td>");
+        document.write("<tr>");
+    }
+    document.write("</table>");
+
+</script>
+
+
+</body>
+</html>

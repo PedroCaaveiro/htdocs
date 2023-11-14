@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tema 4 ejercicio 4</title>
+</head>
+<body>
+<h1> Manipular arrays</h1>
+
+    <label for="palabras">Introduce algunas palabras(separadas por espacios!)</label><br>
+    <textarea name="manipularpalabras" id="palabras" cols="30" rows="10"></textarea>
+    <button type="button" onclick="mostrar()">enviar</button>
+
+
+
+
+    <script type="text/javascript">
+
+    
+
+    function mostrar() {
+        let palabrasIntroducidas = document.getElementById("palabras").value;
+        palabrasIntroducidas=palabrasIntroducidas.trim();
+        let arrayPalabras = new Array();
+        arrayPalabras = palabrasIntroducidas.split(" ");
+        let mensaje = "Primera palabra: " + arrayPalabras[0] + "\n"
+            + "Ultima palabra: " + arrayPalabras[arrayPalabras.length - 1] + "\n" +
+            "Numero de palabras: " + arrayPalabras.length + "\n" +
+            "Ordenadas alfabeticamente: " + arrayPalabras.slice().sort().join('-');
+
+            alert(mensaje);
+    }
+
+
+
+    </script>
+</body>
+</html>
