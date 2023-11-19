@@ -12,7 +12,7 @@
 
     // VALIDAR  SI LA FECHA DE NACIMIENTO ES CORRECTA
     
-    function validarfecha($fecha)
+    function validarFecha($fecha)
     {
         //https://desarrolloweb.com/articulos/validar-fecha-php-formato-existencia.html
         //https://www.php.net/manual/es/function.checkdate.php
@@ -43,7 +43,7 @@
 
 /* VARIABLES DONDE EL METODO POST GUARDA LOS DATOS DEL FORMULARIO TAMBIEN
     LE FACILITO LA FUNCION HTMLENTITIES Y STRIP_TAGS
-    PARA EVITAR INYECCIONES DECODIGO:  https://www.php.net/manual/es/function.htmlentities.php;
+    PARA EVITAR INYECCIONES DECODIGO:  https://www.php.net/manual/es/function.htmlentities.php
     https://www.php.net/manual/es/function.strip-tags.php  */
 
 $nombre = htmlentities(strip_tags($_POST['nombre']));
@@ -74,11 +74,8 @@ if (empty($nombre)) {
         exit();
     }
 
-    
-
-
-    // VALIDAR LA FECHA CON LA FUNCION VALIDARFECHA
-    if (validarfecha($fecha) == true) {
+    // VALIDAR LA FECHA CON LA FUNCION validarFecha
+    if (validarFecha($fecha) == true) {
 
     } else {
         header("Location: error.php?cod_error=200");
@@ -99,8 +96,6 @@ if (empty($nombre)) {
         header("location: error.php?cod_error=800");
         exit();
     }
-        
-
 
     // VALIDAR CONTRASEÑA Y CONFIRMACION
     
@@ -142,10 +137,11 @@ $oculta = ocultarPassword($contrasenya);
 
 
         <?php
-    
+        // FORMATEO LA FECHA DE NACIMIENTO 
+        $fechaCorrecta=date("d/m/y",strtotime($fecha));
 
         // SI LOS DATOS HAN SIDO VALIDADOS CORRECTAMENTE
-        echo ("<p><br>Nombre:$nombre.<br>Apellido: $apellido.<br>Fecha de nacimiento: $fecha.<br>Email: $email.<br>Usuario: $usuario<br>Contraseña:$oculta</p>");
+        echo ("<p><br>Nombre:$nombre.<br>Apellido: $apellido.<br>Fecha de nacimiento: $fechaCorrecta.<br>Email: $email.<br>Usuario: $usuario<br>Contraseña:$oculta</p>");
 
         ?>
         <div class="imagen"></div>
