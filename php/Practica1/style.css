@@ -29,13 +29,12 @@ input::placeholder {
     font-style: italic; 
 }
 form input[type='date']{
-
 color: white;
 
 }
 
 
- form button {
+form button {
     background-color: rgb(141, 135, 135);
     border: none;
     cursor: pointer;
@@ -43,9 +42,7 @@ color: white;
     color: white;
 }
 
-form p{
-    color: rgb(255, 244, 244);
-}
+
 
 
 /******* procesa.php*/
