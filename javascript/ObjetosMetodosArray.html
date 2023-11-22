@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema4 ejercicio 8</title>
+</head>
+<body>
+    
+    <h1>OBJETOS</h1>
+    <div id="objetos"></div>
+
+    <script type="text/javascript">
+
+        class Producto {
+            constructor(codigo, nombre, precio) {
+                this.codigo = codigo;
+                this.nombre = nombre;
+                this.precio = precio;
+            }
+        }
+
+        let salidaObjetos = document.getElementById("objetos");
+        let objeto1 = new Producto(1, "Pan", 0.40);
+        let objeto2 = new Producto(2, "Lentejas", 1.50);
+        let objeto3 = new Producto(3, "Agua", 0.30);
+
+        let objetos = [objeto1, objeto2, objeto3];
+
+        for (let index = 0; index < objetos.length; index++) {
+            
+            salidaObjetos.innerText += "Objeto: " + objetos[index].codigo + "\n Nombre: " + objetos[index].nombre + "\n Precio: " + objetos[index].precio + "\n\n";
+        }
+
+    </script>
+</body>
+</html>

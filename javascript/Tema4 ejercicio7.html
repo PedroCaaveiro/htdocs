@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tema4 ejercicio7</title>
 </head>
+
 <body>
-    <script type="text/javascript" >
+
+    <h1>Meses del año:</h1>
+    <p id="meses"></p>
+    <script type="text/javascript">
 
 
-        let meses=("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre";"Ocutbre","Noviembre";"Diciembre");
+
+        let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Ocutbre", "Noviembre", "Diciembre"];
+        let salidaMeses = document.getElementById('meses')
         for (let index = 0; index < meses.length; index++) {
-            alert(meses[index]);
+            salidaMeses.textContent += meses[index] + "\n";
         };
-            
-        
+
+
 
 
 
@@ -23,4 +30,5 @@
 
 
 </body>
+
 </html>

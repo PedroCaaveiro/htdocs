@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tema 5 ejercicio 3</title>
+
+</head>
+<body>
+<h1>Registro</h1>
+
+<form action="procesar.php" method="post" name="formValidado" onsubmit="return validarFormulario(event)">
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre"><br>
+  
+    <label for="dni">DNI:</label>
+    <input type="text" name="dni" id="dni"><br>
+  
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password"><br>
+  
+    <label for="nacimiento">Nacimiento:</label>
+    <input type="date" name="nacimiento" id="nacimiento"><br>
+  
+    <label for="genero">Masculino</label>
+    <input type="radio" name="genero" id="masculino">
+    
+    <label for="genero">Femenino</label>
+    <input type="radio" name="genero" id="femenino"><br>
+  
+    <label for="terminos">Aceptas los términos</label>
+    <input type="checkbox" name="terminos" id="terminos"><br>
+  
+    <input type="submit" value="Click">
+  
+  </form>
+  
+  <button onclick="leerCookies()"> Leer Cookies</button>
+
+  <div id="resultadoCookies"></div>
+
+ 
+  
+   
+    
+  <script type="text/javascript">
+  
+    function validarFormulario(event) {
+        event.preventDefault();
+      let introducirNombre = document.getElementById("nombre").value;
+      let introducirDni = document.getElementById("dni").value;
+      let introducirPassword = document.getElementById("password").value;
+      let introducirFecha = document.getElementById("nacimiento").value;
+      let introducirGeneroMasculino = document.getElementById("masculino").checked;
+      let introducirGeneroFemenino = document.getElementById("femenino").checked;
+      let introducirTerminos = document.getElementById("terminos").checked;
+  
+        let validarDni=/^\d{8}[a-zA-Z]$/;
+      if (!validarDni.test(introducirDni)) {
+        alert("El campo tiene que tener 8 digitos y una letra ")
+        return false;
+      }
+      if (!introducirNombre) {
+        alert("el campo esta vacio")
+        return false;
+      }
+      if (!introducirPassword) {
+        alert("el campo esta vacio")
+        return false;
+      }
+      let fecha=new Date(introducirFecha);
+      if (isNaN(fecha.getTime()) || fecha > new Date()) {
+        alert("La fecha introducida no es valida")
+        return false;
+      }
+      if (!document.getElementById("terminos").checked) {
+        alert("debe aceptar las condicines")
+        return false;
+      }
+
+    if (!introducirGeneroMasculino && !introducirGeneroFemenino) {
+        
+        alert("Selecciona un genero");
+        return false;
+    }
+    
+guardarCookies(introducirNombre,introducirDni,introducirPassword,introducirFecha,introducirGeneroMasculino,introducirGeneroFemenino,introducirTerminos);
+      
+      return true; 
+    }
+
+
+    function guardarCookies(nombre, dni, password, fecha, generoMasculino, generoFemenino, terminos) {
+    document.cookie = `nombre=${nombre}; SameSite=None; Secure`;
+    document.cookie = `dni=${dni}; SameSite=None; Secure`;
+    document.cookie = `password=${password}; SameSite=None; Secure`;
+    document.cookie = `fecha=${fecha}; SameSite=None; Secure`;
+    document.cookie = `generoMasculino=${generoMasculino}; SameSite=None; Secure`;
+    document.cookie = `generoFemenino=${generoFemenino}; SameSite=None; Secure`;
+    document.cookie = `terminos=${terminos}; SameSite=None; Secure`;
+}
+
+
+function leerCookies() {
+    const cookies = document.cookie.split(';');
+    const resultDiv = document.getElementById('resultadoCookies');
+
+    resultDiv.innerHTML = ''; 
+    cookies.forEach(cookie => {
+        resultDiv.innerHTML += `<p>${cookie.trim()}</p>`;
+    });
+}
+
+
+  </script>
+</body>
+</html>
